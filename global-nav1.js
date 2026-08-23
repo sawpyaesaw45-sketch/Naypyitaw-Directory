@@ -45,7 +45,7 @@ function injectGlobalLayouts() {
             <a class="navbar-brand ms-auto pe-2" href="home.html" id="navBrand">Naypyitaw Directory</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link txt-home" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link txt-home" href="index.html">Home</a></li>
                     <li class="nav-item dropdown">
                         <div class="btn-group">
                             <a class="nav-link txt-categories" href="categories.html">Categories</a>
@@ -71,7 +71,7 @@ function injectGlobalLayouts() {
     const sidebarHTML = `
     <div class="sidebar-overlay" id="overlay"></div>
     <ul class="slidebar">
-        <li class="mt-3"><a class="txt-home" href="home.html">Home</a></li>
+        <li class="mt-3"><a class="txt-home" href="index.html">Home</a></li>
         <li class="nav-item dropdown">
             <div class="btn-group w-100">
                 <a class="nav-link txt-categories text-white flex-grow-1" href="categories.html">Categories</a>

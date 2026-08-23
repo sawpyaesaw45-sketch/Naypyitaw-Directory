@@ -42,10 +42,10 @@ function injectGlobalLayouts() {
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <button class="btn btn-outline-light d-lg-none me-2" id="sidebarToggle"><span style="font-size:24px;">☰</span></button>
-            <a class="navbar-brand ms-auto pe-2" href="home.html" id="navBrand">Naypyitaw Directory</a>
+            <a class="navbar-brand ms-auto pe-2" href="index.html" id="navBrand">Naypyitaw Directory</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link txt-home" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link txt-home" href="index.html">Home</a></li>
                     <li class="nav-item dropdown">
                         <div class="btn-group">
                             <a class="nav-link txt-categories" href="categories.html">Categories</a>
@@ -85,7 +85,7 @@ function injectGlobalLayouts() {
                 <div id="searchSuggestions" class="suggestions-box hidden"></div>
             </div>
         </div>
-        <li><a class="txt-home" href="home.html">Home</a></li>
+        <li><a class="txt-home" href="index.html">Home</a></li>
         
         <!-- repair but still no equal slidebar -->
         <li class="nav-item dropdown">
