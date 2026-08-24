@@ -277,8 +277,21 @@ body {
 /* Landmark Cards */
 .content-card { background: white; border-radius: 16px; overflow: hidden; border: none; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: all 0.3s ease; margin-bottom: 25px; height: 100%; display: flex; flex-direction: column; }
 .content-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-.img-wrapper { position: relative; height: 200px; background: #eaeaea; width: 100%; }
-.img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+/* Update your image wrapper CSS */
+.img-wrapper {
+    position: relative;
+    height: 200px;
+    background: #e9ecef;
+    width: 100%;
+    overflow: hidden;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 .tag-badge { position: absolute; top: 15px; left: 15px; background: #E4B34F; color: #114B5F; font-weight: 600; font-size: 0.75rem; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; }
 .card-body-content { padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
 .card-body-content h3 { font-size: 1.25rem; color: #114B5F; font-weight: 600; margin-bottom: 12px; }
@@ -417,7 +430,7 @@ footer p { margin: 0; font-size: 0.9rem; }
             <div class="col-xl-4 col-md-6 card-item" data-category="pagodas">
                 <div class="content-card">
                     <div class="img-wrapper">
-                        <img src="npt photos\Uppasanti1.jpg" alt="Uppatasanti">
+                        <img src="npt photos/Uppasanti1.jpg" alt="Uppatasanti">
                         <div class="tag-badge" data-en="Pagoda" data-my="စေတီတော်">Pagoda</div>
                     </div>
                     <div class="card-body-content">
@@ -435,7 +448,7 @@ footer p { margin: 0; font-size: 0.9rem; }
             <div class="col-xl-4 col-md-6 card-item" data-category="parks">
                 <div class="content-card">
                     <div class="img-wrapper">
-                        <img src="npt photos\waterfountain1.webp" alt="Water Fountain">
+                        <img src="npt photos/waterfountain1.webp" alt="Water Fountain">
                         <div class="tag-badge" data-en="Parks & Gardens" data-my="ပန်းခြံနှင့် ဥယျာဉ်">Parks & Gardens</div>
                     </div>
                     <div class="card-body-content">
@@ -453,7 +466,7 @@ footer p { margin: 0; font-size: 0.9rem; }
             <div class="col-xl-4 col-md-6 card-item" data-category="parks">
                 <div class="content-card">
                     <div class="img-wrapper">
-                        <img src="npt photos\safari1.jpg" alt="Zoo">
+                        <img src="npt photos/safari1.jpg" alt="Zoo">
                          <div class="tag-badge" data-en="Parks & Gardens" data-my="ပန်းခြံနှင့် ဥယျာဉ်">Parks & Gardens</div>
                     </div>
                     <div class="card-body-content">
@@ -471,7 +484,7 @@ footer p { margin: 0; font-size: 0.9rem; }
             <div class="col-xl-4 col-md-6 card-item" data-category="pagodas">
                 <div class="content-card">
                     <div class="img-wrapper">
-                        <img src="npt photos\maravijaya4.jpg" alt="maravijaya buddha statue">
+                        <img src="npt photos/maravijaya4.jpg" alt="maravijaya buddha statue">
                         <div class="tag-badge" data-en="Pagoda" data-my="စေတီတော်">Pagoda</div>
                     </div>
                     <div class="card-body-content">
@@ -543,7 +556,7 @@ footer p { margin: 0; font-size: 0.9rem; }
             <div class="col-xl-4 col-md-6 card-item" data-category="parks">
                 <div class="content-card">
                     <div class="img-wrapper">
-                        <img src="npt photos\pnpt1.webp" alt="PNPT">
+                        <img src="npt photos/pnpt1.webp" alt="PNPT">
                         <div class="tag-badge" data-en="Parks & Gardens" data-my="ပန်းခြံနှင့် ဥယျာဉ်">Parks & Gardens</div>
                     </div>
                     <div class="card-body-content">
@@ -651,7 +664,7 @@ footer p { margin: 0; font-size: 0.9rem; }
             <div class="col-xl-4 col-md-6 card-item" data-category="museums and stadiums">
                 <div class="content-card">
                     <div class="img-wrapper">
-                        <img src="npt photos\image8.webp" alt="PNPT">
+                        <img src="npt photos/image8.webp" alt="PNPT">
                         <div class="tag-badge" data-en="Museums" data-my="ပြတိုက်">Museums</div>
                     </div>
                     <div class="card-body-content">
@@ -669,7 +682,7 @@ footer p { margin: 0; font-size: 0.9rem; }
             <div class="col-xl-4 col-md-6 card-item" data-category="museums and stadiums">
                 <div class="content-card">
                     <div class="img-wrapper">
-                        <img src="npt photos\stadium1.webp" alt="PNPT">
+                        <img src="npt photos/stadium1.webp" alt="PNPT">
                         <div class="tag-badge" data-en="Stadium" data-my="အားကစားကွင်း">Stadium</div>
                     </div>
                     <div class="card-body-content">

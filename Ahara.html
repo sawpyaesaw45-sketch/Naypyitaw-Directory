@@ -19,37 +19,53 @@
 
 html {
     scroll-behavior: smooth;
+    height: 100%;
 }
 
-/* Navbar */
-.navbar-brand {
-    font-size: 3.5vh;
-    font-weight: bolder;
-    color: #E4B34F !important; /* Elegant Gold */
-    white-space: nowrap;
+body {
+    font-family: 'Poppins', 'Pyidaungsu', sans-serif;
+    background-color: #f4f6f7;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
+/* Navbar Fixes */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 70px;
-    background: #114B5F; /* Refined Deep Teal */
+    background: #114B5F;
     z-index: 3000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
 }
+
+.navbar-brand {
+    font-size: clamp(1.1rem, 4vw, 1.8rem) !important;
+    font-weight: bold;
+    color: #E4B34F !important;
+    white-space: nowrap;
+    margin-bottom: 0 !important;
+}
+
 .navbar-nav .nav-link {
     position: relative;
     margin: 0 10px;
-    font-size: 2.5vh;
+    font-size: 1.1rem;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.85) !important;
     transition: color 0.3s ease;
 }
+
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
     color: #E4B34F !important;
 }
+
 .navbar-nav .nav-link.active::after {
     content: "";
     position: absolute;
@@ -71,7 +87,7 @@ html {
     border-radius: 20px;
     cursor: pointer;
     transition: 0.3s;
-    font-size: 2.2vh;
+    font-size: 1rem;
     margin-left: 15px;
     display: flex;
     align-items: center;
@@ -90,7 +106,7 @@ html {
 }
 .dropdown-item {
     color: #fff;
-    font-size: 2.2vh;
+    font-size: 1rem;
 }
 .dropdown-item:hover {
     background-color: #1A5F76;
@@ -116,7 +132,7 @@ html {
     padding: 12px 15px;
     text-decoration: none;
     transition: all 0.3s ease;
-    font-size: 2.5vh;
+    font-size: 1.1rem;
 }
 .slidebar li a:hover {
     background-color: #1A5F76;
@@ -129,6 +145,7 @@ html {
     font-weight: bold;
     border-left: 4px solid #E4B34F;
 }
+
 /* Search Box Container */
 .search-box {
     margin-top: 15px;
@@ -148,7 +165,6 @@ html {
     position: relative;
 }
 
-/* Suggestions List UI */
 .suggestions-box {
     position: absolute;
     top: 100%;
@@ -179,10 +195,10 @@ html {
     font-weight: bold;
 }
 
-/* Hide elements utility */
 .hidden {
     display: none !important;
 }
+
 /* Custom Center Alert Box Styles */
 .custom-alert-overlay {
     position: fixed;
@@ -225,46 +241,44 @@ html {
     0% { transform: scale(0.7); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
 }
+
 /* Split Framework Structural Content Layout */
 #home {
     padding-top: 70px;
-    padding-left: 210px; /* Positions layout area after sidebar ends */
+    padding-left: 210px;
     min-height: 100vh;
     background-color: #f4f6f7;
     display: flex;
     position: relative;
+    flex: 1;
 }
 
-/* Scroll-linked text lane container sitting between sidebar and image wrapper */
 .scroll-text-container {
     width: 55%;
     padding: 40px;
-    padding-bottom: 250px; /* Grants fluid empty buffer scrolling track clearance */
+    padding-bottom: 150px;
 }
 
-/* Sticky Image Viewport Column on the right hand end frame */
 .sticky-image-container {
     width: 45%;
     position: sticky;
-    top: 90px; /* Increased from 70px to create space below the navbar */
-    height: calc(100vh - 180px); /* Reduced height (100vh minus navbar + footer gaps) */
+    top: 90px;
+    height: calc(100vh - 180px);
     overflow: hidden;
     background-color: #0d2a35;
-    border-radius: 20px; /* Adds rounded corners for the "card" look */
-    margin-top: 20px;    /* Explicit space below navbar */
-    margin-bottom: 20px; /* Explicit space above footer */
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 #stickyTargetImg { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s; }
 #stickyTargetMap { width: 100%; height: 100%; display: none; border: 0; }
-/* Ensure the image fills the container */
 .sticky-image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20px; /* Matches the container corners */
+    border-radius: 20px;
 }
 
-/* Text Section Spacing Blocks */
 .scroll-section {
     min-height: 80vh;
     display: flex;
@@ -345,17 +359,15 @@ html {
 .back-btn i {
     margin-right: 8px;
 }
-/* Fixed Sticky Footer Layout */
+
+/* Footer Fixes */
 footer {
     background: #114B5F;
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
     padding: 12px 0;
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    z-index: 4000;
+    margin-top: auto;
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 footer p {
@@ -363,7 +375,6 @@ footer p {
     font-size: 0.9rem;
 }
 
-/* Mobile Overlays */
 .sidebar-overlay {
     position: fixed;
     inset: 0;
@@ -378,7 +389,6 @@ footer p {
     display: none;
 }
 
-/* Responsive Adaptive Scale adjustments */
 @media(max-width: 992px) {
     #home {
         padding-left: 20px; 
@@ -404,7 +414,7 @@ footer p {
     .slidebar { transform: translateX(-100%); width: 260px; }
     .slidebar.active { transform: translateX(0); }
     .navbar-collapse { display: none !important; }
-    #home { padding-top: 80px; padding-left: 15px; padding-right: 15px; }
+    #home { padding-top: 130px !important; padding-left: 15px; padding-right: 15px; }
     .quick-meta-grid { grid-template-columns: 1fr; gap: 12px; }
 }
 </style>
@@ -417,10 +427,10 @@ footer p {
         <button class="btn btn-outline-light d-lg-none me-2" id="sidebarToggle">
             <span style="font-size:24px;">☰</span>
         </button>
-        <a class="navbar-brand ms-auto pe-2" href="#" id="navBrand">Naypyitaw Directory</a>
+        <a class="navbar-brand me-auto pe-2" href="#" id="navBrand">Naypyitaw Directory</a>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-center">
-                <li class="nav-item"><a class="nav-link  txt-home" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link txt-home" href="index.html">Home</a></li>
                 <li class="nav-item dropdown">
                     <div class="btn-group">
                         <a class="nav-link active txt-categories" href="categories.html">Categories</a>
@@ -448,23 +458,21 @@ footer p {
 
 <!-- Mobile Sidebar -->
 <ul class="slidebar">
-    <!-- Search Box Container -->
-<div class="search-box mb-3 px-2">
-    <div class="search-container">
-        <div class="input-group">
-            <span class="input-group-text bg-primary text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                </svg>
-            </span>
-            <input type="text" class="form-control" id="sidebarSearch" placeholder="Search..." autocomplete="off" />
+    <div class="search-box mb-3 px-2">
+        <div class="search-container">
+            <div class="input-group">
+                <span class="input-group-text bg-primary text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg>
+                </span>
+                <input type="text" class="form-control" id="sidebarSearch" placeholder="Search..." autocomplete="off" />
+            </div>
+            <div id="searchSuggestions" class="suggestions-box hidden"></div>
         </div>
-        <!-- Search Suggestions Dropdown -->
-        <div id="searchSuggestions" class="suggestions-box hidden"></div>
     </div>
-</div>
-    <li><a class=" txt-home" href="index.html">Home</a></li>
-   <li class="nav-item dropdown">
+    <li><a class="txt-home" href="index.html">Home</a></li>
+    <li class="nav-item dropdown">
         <div class="btn-group">
             <a class="nav-link actived txt-categories" href="categories.html">Categories</a>
             <a class="nav-link dropdown-toggle dropdown-toggle-split" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
@@ -490,12 +498,13 @@ footer p {
     <!-- Center Screen Text Stream Flow (Left Split) -->
     <div class="scroll-text-container">
         <div class="ps-4 mt-3">
-            <a href="market.html" class="back-btn">
+            <a href="market.html" class="back-btn" id="backBtnLink">
                 <i class="fas fa-arrow-left"></i> Back
             </a>
         </div>
+        
         <!-- Section 1: Overview -->
-        <div class="scroll-section" data-image="npt_photos2\ahara1.webp">
+        <div class="scroll-section" data-image="npt_photos2/ahara1.webp">
             <div class="card info-card">
                 <span class="park-badge" id="lblB1"></span>
                 <h2 id="lblT1"></h2>
@@ -506,8 +515,8 @@ footer p {
             </div>
         </div>
 
-        <!-- Section 2: Musical Fountain -->
-        <div class="scroll-section" data-image="npt_photos2\ahara2.jpeg">
+        <!-- Section 2: Fresh Products -->
+        <div class="scroll-section" data-image="npt_photos2/ahara2.jpeg">
             <div class="card info-card">
                 <span class="park-badge" id="lblB2"></span>
                 <h2 id="lblT2"></h2>
@@ -515,18 +524,17 @@ footer p {
             </div>
         </div>
 
-        <!-- Section 3: Night Illumination -->
-        <div class="scroll-section" data-image="npt_photos2\ahara3.jpeg">
+        <!-- Section 3: Local Food -->
+        <div class="scroll-section" data-image="npt_photos2/ahara3.jpeg">
             <div class="card info-card">
                 <span class="park-badge" id="lblB3"></span>
                 <h2 id="lblT3"></h2>
                 <p id="lblD3"></p>
-                
             </div>
         </div>
 
-        <!-- Section 4: Steel Structure Bridge -->
-        <div class="scroll-section" data-image="npt_photos2\ahara4.jpg">
+        <!-- Section 4: Easy to Reach -->
+        <div class="scroll-section" data-image="npt_photos2/ahara4.jpg">
             <div class="card info-card">
                 <span class="park-badge" id="lblB4"></span>
                 <h2 id="lblT4"></h2>
@@ -534,31 +542,32 @@ footer p {
             </div>
         </div>
 
-        <!-- Section 5: Recreational Grounds -->
-        <div class="scroll-section" data-image="npt_photos2\ahara5.webp">
+        <!-- Section 5: Shopping Experience -->
+        <div class="scroll-section" data-image="npt_photos2/ahara5.webp">
             <div class="card info-card">
                 <span class="park-badge" id="lblB5"></span>
                 <h2 id="lblT5"></h2>
                 <p id="lblD5"></p>
             </div>
         </div>
-<div class="scroll-section" id="last-section">
-    <div class="card info-card">
-        <h2>Location</h2>
-        <p>You can find us at the location shown on the map.</p>
-    </div>
-</div>
+
+        <div class="scroll-section" id="last-section">
+            <div class="card info-card">
+                <h2 id="lblLocTitle">Location</h2>
+                <p id="lblLocDesc">You can find us at the location shown on the map.</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Right Side Sticky Frame Image Panel (Stays locked on screen frame) -->
+    <!-- Right Side Sticky Frame Image Panel -->
     <div class="sticky-image-container">
         <img id="stickyTargetImg" src="npt_photos2/ahara1.webp">
-       <iframe id="stickyTargetMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3134.39043822601!2d96.225535!3d19.738122699999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c8bba89a9ec2d1%3A0xf25142ea478c3cdf!2zQWhhcnlhIFRodWtoYSBNYXJrZXQg4YCh4YCs4YCf4YCs4YCb4YCe4YCv4YCB4YCI4YCx4YC4!5e1!3m2!1sen!2smm!4v1784876268453!5m2!1sen!2smm" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <iframe id="stickyTargetMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3134.39043822601!2d96.225535!3d19.738122699999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c8bba89a9ec2d1%3A0xf25142ea478c3cdf!2zQWhhcnlhIFRodWtoYSBNYXJrZXQg4YCh4YCs4YCf4YCs4YCb4YCe4YCv4YCB4YCI4YCx4YC4!5e1!3m2!1sen!2smm!4v1784876268453!5m2!1sen!2smm" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
 
 </section>
 
-<!-- Fixed Static Baseline Footer Layout -->
+<!-- Footer Layout -->
 <footer>
     <p id="footerText">© 2026 Naypyitaw. All Rights Reserved.</p>
 </footer>
@@ -571,6 +580,7 @@ footer p {
         <button id="closeAlertBtn" class="btn btn-warning fw-bold">OK</button>
     </div>
 </div>
+
 <!-- Bootstrap Bundle JS Component package -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script src="search.js"></script>
@@ -584,29 +594,40 @@ const localization = {
         searchPlaceholder: "Search...",
         home: "Home",
         categories: "Categories",
-         edu: "Education",
+        edu: "Education",
         scenic: "Scenic Spots",
         markets: "Markets",
         hotels: "Hotels & Resorts",
         about: "About",
         trip: "Trip planning",
         contact: "Contact",
-        searchPlaceholder: "Search...",
-        footer: "© 2026 Naypyitaw. All Rights Reserved.",
         
-        // Scenic content localized keys
         backBtn: "<i class='fa-solid fa-arrow-left'></i> Back",
-        locTag: "Location", locVal: "Zabuthiri Township, Naypyitaw",
+        locTag: "Location", 
+        locVal: "Pyinmana Township, Naypyitaw",
+        
         b1: "Overview",
+        t1: "Ahara Thukha Market",
         d1: "The local market, also known as Ahara Sukha Market or Kim Phon Tan Market, is a bustling and essential commercial hub located in the heart of Pyinmana Township, Nay Pyi Taw. Ahara Sukha Market has many shops selling various essential goods of daily life.",
+        
         b2: "Fresh Products",
-        d2: "Aharashtra Market is a haven for fresh produce, attracting shoppers every day with its selection of high-quality local produce and livestock. Visitors can find fresh seasonal vegetables, juicy local fruits, and a variety of fresh river fish and meat brought in every morning. It serves as a major supply point for neighborhood households and restaurant owners looking for top-quality ingredients sourced directly from local farms.",
+        t2: "Fresh Produce & Quality Food",
+        d2: "Aharashtra Market is a haven for fresh produce, attracting shoppers every day with its selection of high-quality local produce and livestock. Visitors can find fresh seasonal vegetables, juicy local fruits, and a variety of fresh river fish and meat brought in every morning.",
+        
         b3: "Local Food",
-        d3: "Foodies will find a true taste of Burmese tradition at the market’s bustling restaurants and food vendors. A variety of dishes are available, from rice cakes and coconut noodles to other freshly made desserts and delicious fried potatoes. The reasonably priced food options give visitors a fascinating taste of the region’s authentic everyday food culture.",
-        b4: "Easy to Reach", 
-        d4: "Conveniently located in Paung Laung (1) Ward, Pyinmana Township, Ahara Sukha Market is located in a convenient urban location [Yuzana Myay]. Well-connected to the local road network, it is easily accessible from any part of the capital by car, motorbike or local three-wheeler. With a wide range of delivery options and its status as a local landmark, both locals and first-time visitors can get around without any hassle.",
+        t3: "Authentic Local Delicacies",
+        d3: "Foodies will find a true taste of Burmese tradition at the market’s bustling restaurants and food vendors. A variety of dishes are available, from rice cakes and coconut noodles to other freshly made desserts and delicious fried potatoes.",
+        
+        b4: "Easy to Reach",
+        t4: "Accessible Location",
+        d4: "Conveniently located in Paung Laung (1) Ward, Pyinmana Township, Ahara Sukha Market is located in a convenient urban location. Well-connected to the local road network, it is easily accessible from any part of the capital by car, motorbike or local three-wheeler.",
+        
         b5: "Shopping Experience",
-        d5: "Shopping at Ahara Sukha Market offers a multi-sensory experience, filled with the sights, sounds and smells of a Myanmar market. The friendly interactions between local vendors and regular shoppers make bargaining easy and natural, creating a warm and community-centered atmosphere. Wandering through the lively, closely-lined alleys gives visitors an authentic and unfiltered glimpse into the heartbeat of Nay Pyi Taw’s daily commercial life."
+        t5: "Vibrant Local Market Atmosphere",
+        d5: "Shopping at Ahara Sukha Market offers a multi-sensory experience, filled with the sights, sounds and smells of a Myanmar market. The friendly interactions between local vendors and regular shoppers make bargaining easy and natural.",
+        
+        locTitle: "Location",
+        locDesc: "You can find us at the location shown on the map."
     },
     my: {
         langBtn: "English",
@@ -622,29 +643,38 @@ const localization = {
         about: "ကျွန်ုပ်တို့အကြောင်း",
         trip: "ခရီးစဉ်စီစဉ်ခြင်း",
         contact: "ဆက်သွယ်ရန်",
-        searchPlaceholder: "ရှာဖွေရန်...",
-        footer: "© 2026 Naypyitaw. All Rights Reserved.",
         
-        // Scenic content localized keys
         backBtn: "<i class='fa-solid fa-arrow-left'></i> နောက်သို့",
-        locTag: "တည်နေရာ", locVal: "ပျဉ်းမနားမြို့၊ နေပြည်တော်",
+        locTag: "တည်နေရာ", 
+        locVal: "ပျဉ်းမနားမြို့၊ နေပြည်တော်",
         
         b1: "ခြုံငုံသုံးသပ်ချက်",
-        d1: "အဟာရသုခဈေး သို့မဟုတ် ကင်းပွန်တန်ဈေးဟုလည်း လူသိများသော ဒေသထွက်ဈေးသည် နေပြည်တော်၊ ပျဉ်းမနားမြို့၏ အဓိကနေရာတွင် တည်ရှိသော စည်ကားပြီး မရှိမဖြစ်လိုအပ်သော ကုန်သွယ်ရေးဗဟိုချက်တစ်ခုဖြစ်ပါသည်။အဟာရာသုခဈေးတွင် နေ့စဉ်ဘဝ၏မရှိမဖြစ်လိုအပ်သော ကုန်ပစ္စည်းအမျိုးမျိုးကို ရောင်းချပေးနေသောဆိုင်ခန်းပေါင်းများစွာရှိသည်။",
-        b2:"သန့်ရှင်းလတ်ဆတ်သောထုတ်ကုန်များ",
-        d2: "အဟာရသုခဈေးသည် လတ်ဆတ်တဲ့ ကုန်ပစ္စည်းတွေအတွက် နိဗ္ဗာန်ဘုံတစ်ခုဖြစ်ပြီး အရည်အသွေးမြင့် ဒေသထွက်ကုန်တွေနဲ့ မွေးမြူရေးတိရစ္ဆာန်တွေ ရွေးချယ်ဝယ်ယူမှုတွေကြောင့် နေ့စဉ် ဈေးဝယ်သူတွေကို ဆွဲဆောင်နေပါတယ်။ လာရောက်လည်ပတ်သူတွေဟာ ရာသီအလိုက် စိုက်ပျိုးထားတဲ့ လတ်ဆတ်တဲ့ ဟင်းသီးဟင်းရွက်တွေ၊ အရည်ရွှမ်းတဲ့ ဒေသထွက် သစ်သီးဝလံတွေနဲ့ မနက်တိုင်း ယူဆောင်လာတဲ့ လတ်ဆတ်တဲ့ မြစ်ငါးနဲ့ အသားအမျိုးမျိုးကို ရှာတွေ့နိုင်ပါတယ်။ဒေသခံခြံတွေကနေ တိုက်ရိုက်ရရှိတဲ့ထိပ်တန်း ပါဝင်ပစ္စည်းတွေကို ရှာဖွေနေတဲ့ ရပ်ကွက်အိမ်ထောင်စုတွေနဲ့ စားသောက်ဆိုင်ပိုင်ရှင်တွေအတွက် အဓိက ထောက်ပံ့ရေးနေရာအဖြစ် ဆောင်ရွက်ပါတယ်။",
-        b3: "ရောင်းချသောကုန်ပစ္စည်းများ", 
-        d3: "အစားအသောက်ဝါသနာရှင်များသည် ဈေး၏ စည်ကားသော စားသောက်ဆိုင်များနှင့် မုန့်များရောင်းချသူများတွင် မြန်မာ့ရိုးရာဓလေ့၏ စစ်မှန်သောအရသာကို ရှာတွေ့နိုင်မည်ဖြစ်သည်။မုန့်ဟင်းခါး နှင့် အုန်းခေါက်ဆွဲမှသည် အခြားလတ်လတ်ဆတ်ဆတ်ပြုလုပ်ထားသောအချိုပွဲများနှင့် အရသာရှိသော အာလူးကြော်များအထိ အမျိုးမျိုးသောဟင်းလျာများကို ရရှိနိုင်မည်ဖြစ်သည်။ဈေးနှုန်းသင့်တင့်သောဟင်းလျာရွေးချယ်စရာများသည် လာရောက်လည်ပတ်သူများအား ဒေသ၏ စစ်မှန်သော နေ့စဉ်အစားအစာယဉ်ကျေးမှုသဖွယ်စွဲမက်ဖွယ်ကောင်းသော အရသာကိုပေးစွမ်းပါသည်။",
-        b4: "သွားလာရလွယ်ကူခြင်း", 
-        d4: " အဟာရသုခဈေးသည် သွားလာရလွယ်ကူသော မြို့ပြတည်နေရာ  တွင် ရှိသည်။ဒေသတွင်းလမ်းကွန်ရက်ဖြင့် ကောင်းစွာချိတ်ဆက်ထားသောကြောင့် ကား၊ မော်တော်ဆိုင်ကယ် သို့မဟုတ် ဒေသခံသုံးဘီးယာဉ်များဖြင့် မြို့တော်ဒေသ၏ မည်သည့်နေရာမှမဆို အလွယ်တကူ ရောက်ရှိနိုင်သည်။ ပို့ဆောင်ရန်နေရာများစွာနှင့် ဒေသတွင်း အထင်ကရနေရာတစ်ခုအဖြစ် ထင်ရှားသော အဆင့်အတန်းကြောင့် ဒေသခံများနှင့် ပထမဆုံးအကြိမ်လာရောက်လည်ပတ်သူများ နှစ်ဦးစလုံး အခက်အခဲမရှိဘဲ သွားလာနိုင်မည်ြဖစ်သသည်။",
-        b5: "အဓိကအကြောင်းအရာများ", 
-         d5: "အဟာရသုခဈေးတွင် ဈေးဝယ်ခြင်းသည် မြန်မာ့ဈေးရဲ့ မြင်ကွင်းတွေ၊ အသံတွေနဲ့ ရနံ့တွေနဲ့ ပြည့်နှက်နေတဲ့ စွမ်းအင်ပြည့်ဝပြီး အာရုံခံစားမှုမျိုးစုံကို ပေးစွမ်းပါတယ်။ ဒေသခံရောင်းချသူတွေနဲ့ ပုံမှန်ဈေးဝယ်သူတွေရဲ့ ခင်မင်ရင်းနှီးတဲ့ ဆက်ဆံရေးက ဈေးဆစ်တာကို ပေါ့ပါးပြီး သဘာဝကျတဲ့ နွေးထွေးပြီး ရပ်ရွာဗဟိုပြုတဲ့ လေထုကို ဖန်တီးပေးပါတယ်။ သက်ဝင်လှုပ်ရှားပြီး နီးကပ်စွာ စီတန်းထားတဲ့ လမ်းကြားတွေကို ဖြတ်သန်းသွားလာခြင်းက လာရောက်လည်ပတ်သူတွေကို နေပြည်တော်ရဲ့ နေ့စဉ်စီးပွားရေးဘဝရဲ့ နှလုံးခုန်သံကို စစ်မှန်ပြီး စစ်ထုတ်မှုမရှိတဲ့ အကြည့်တစ်ချက်ကို ပေးစွမ်းပါတယ်။"
+        t1: "အဟာရသုခဈေး",
+        d1: "အဟာရသုခဈေး သို့မဟုတ် ကင်းပွန်တန်ဈေးဟုလည်း လူသိများသော ဒေသထွက်ဈေးသည် နေပြည်တော်၊ ပျဉ်းမနားမြို့၏ အဓိကနေရာတွင် တည်ရှိသော စည်ကားပြီး မရှိမဖြစ်လိုအပ်သော ကုန်သွယ်ရေးဗဟိုချက်တစ်ခုဖြစ်ပါသည်။",
+        
+        b2: "သန့်ရှင်းလတ်ဆတ်သောထုတ်ကုန်များ",
+        t2: "လတ်ဆတ်သော သီးနှံနှင့် အစားအသောက်များ",
+        d2: "အဟာရသုခဈေးသည် လတ်ဆတ်တဲ့ ကုန်ပစ္စည်းတွေအတွက် နိဗ္ဗာန်ဘုံတစ်ခုဖြစ်ပြီး အရည်အသွေးမြင့် ဒေသထွက်ကုန်တွေနဲ့ မွေးမြူရေးတိရစ္ဆာန်တွေ ရွေးချယ်ဝယ်ယူမှုတွေကြောင့် နေ့စဉ် ဈေးဝယ်သူတွေကို ဆွဲဆောင်နေပါတယ်။",
+        
+        b3: "ရောင်းချသောကုန်ပစ္စည်းများ",
+        t3: "ဒေသထွက် အစားအစာများ",
+        d3: "အစားအသောက်ဝါသနာရှင်များသည် ဈေး၏ စည်ကားသော စားသောက်ဆိုင်များနှင့် မုန့်များရောင်းချသူများတွင် မြန်မာ့ရိုးရာဓလေ့၏ စစ်မှန်သောအရသာကို ရှာတွေ့နိုင်မည်ဖြစ်သည်။",
+        
+        b4: "သွားလာရလွယ်ကူခြင်း",
+        t4: "လွယ်ကူချောမွေ့သော သွားလာရေး",
+        d4: "အဟာရသုခဈေးသည် သွားလာရလွယ်ကူသော မြို့ပြတည်နေရာတွင် ရှိသည်။ ဒေသတွင်းလမ်းကွန်ရက်ဖြင့် ကောင်းစွာချိတ်ဆက်ထားသောကြောင့် ကား၊ မော်တော်ဆိုင်ကယ် သို့မဟုတ် သုံးဘီးယာဉ်များဖြင့် အလွယ်တကူ ရောက်ရှိနိုင်သည်။",
+        
+        b5: "အဓိကအကြောင်းအရာများ",
+        t5: "ဈေးဝယ်ယူမှု အတွေ့အကြုံ",
+        d5: "အဟာရသုခဈေးတွင် ဈေးဝယ်ခြင်းသည် မြန်မာ့ဈေးရဲ့ မြင်ကွင်းတွေ၊ အသံတွေနဲ့ ရနံ့တွေနဲ့ ပြည့်နှက်နေတဲ့ စွမ်းအင်ပြည့်ဝပြီး အာရုံခံစားမှုမျိုးစုံကို ပေးစွမ်းပါတယ်။",
+        
+        locTitle: "တည်နေရာ",
+        locDesc: "မြေပုံတွင် ပြသထားသော တည်နေရာအတိုင်း လာရောက်လေ့လာနိုင်ပါသည်။"
     }
 };
 
 let currentLang = localStorage.getItem('globalLanguage') || 'en';
 
-// 2. RENDERING ENGINE TRANSLATION ASSIGNMENT
 function updateLanguage() {
     const data = localization[currentLang];
     
@@ -653,20 +683,34 @@ function updateLanguage() {
     document.getElementById('navBrand').textContent = data.brand;
     document.getElementById('footerText').textContent = data.footer;
     document.getElementById('sidebarSearch').placeholder = data.searchPlaceholder;
+    document.getElementById('backBtnLink').innerHTML = data.backBtn;
 
-    // Direct Elements Context binding loops
-    document.getElementById('lblB1').textContent = data.b1; document.getElementById('lblT1').textContent = data.t1; document.getElementById('lblD1').textContent = data.d1;
-    document.getElementById('lblB2').textContent = data.b2; document.getElementById('lblT2').textContent = data.t2; document.getElementById('lblD2').textContent = data.d2;
-    document.getElementById('lblB3').textContent = data.b3; document.getElementById('lblT3').textContent = data.t3; document.getElementById('lblD3').textContent = data.d3;
-    document.getElementById('lblB4').textContent = data.b4; document.getElementById('lblT4').textContent = data.t4; document.getElementById('lblD4').textContent = data.d4;
-    document.getElementById('lblB5').textContent = data.b5; document.getElementById('lblT5').textContent = data.t5; document.getElementById('lblD5').textContent = data.d5;
+    // Titles & Descriptions text assignment
+    document.getElementById('lblB1').textContent = data.b1; 
+    document.getElementById('lblT1').textContent = data.t1; 
+    document.getElementById('lblD1').textContent = data.d1;
+
+    document.getElementById('lblB2').textContent = data.b2; 
+    document.getElementById('lblT2').textContent = data.t2; 
+    document.getElementById('lblD2').textContent = data.d2;
+
+    document.getElementById('lblB3').textContent = data.b3; 
+    document.getElementById('lblT3').textContent = data.t3; 
+    document.getElementById('lblD3').textContent = data.d3;
+
+    document.getElementById('lblB4').textContent = data.b4; 
+    document.getElementById('lblT4').textContent = data.t4; 
+    document.getElementById('lblD4').textContent = data.d4;
+
+    document.getElementById('lblB5').textContent = data.b5; 
+    document.getElementById('lblT5').textContent = data.t5; 
+    document.getElementById('lblD5').textContent = data.d5;
+
+    document.getElementById('lblLocTitle').textContent = data.locTitle;
+    document.getElementById('lblLocDesc').textContent = data.locDesc;
 
     document.querySelectorAll('.txt-loc-tag').forEach(el => el.textContent = data.locTag);
     document.querySelectorAll('.txt-loc-val').forEach(el => el.textContent = data.locVal);
-    document.querySelectorAll('.txt-size-tag').forEach(el => el.textContent = data.sizeTag);
-    document.querySelectorAll('.txt-time-tag').forEach(el => el.textContent = data.timeTag);
-    document.querySelectorAll('.txt-time-val').forEach(el => el.textContent = data.timeVal);
-    document.querySelectorAll('.txt-fee-tag').forEach(el => el.textContent = data.feeTag);
 
     document.querySelectorAll('.txt-home').forEach(el => el.textContent = data.home);
     document.querySelectorAll('.txt-categories').forEach(el => el.textContent = data.categories);
@@ -684,6 +728,7 @@ const switchAction = () => {
     localStorage.setItem('globalLanguage', currentLang);
     updateLanguage();
 };
+
 document.getElementById('langToggle').addEventListener('click', switchAction);
 document.getElementById('langToggleMobile').addEventListener('click', switchAction);
 
@@ -693,13 +738,13 @@ window.addEventListener('storage', (e) => {
         updateLanguage();
     }
 });
+
 document.addEventListener('DOMContentLoaded', updateLanguage);
 
-// 3. SYNCHRONIZED SCROLL TRIGGER SCRIPT (TEXT + IMAGE SWITCH)
+// Scroll Trigger Handler
 const scrollSections = document.querySelectorAll('.scroll-section');
 const stickyImg = document.getElementById('stickyTargetImg');
 const stickyMap = document.getElementById('stickyTargetMap');
-const lastSection = document.getElementById('last-section');
 
 window.addEventListener('scroll', () => {
     let activeImageUrl = "";
@@ -729,7 +774,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// CORE INTERACTIVE DRAWER MENU HANDLERS
+// Mobile Sidebar Handlers
 const sidebar = document.querySelector(".slidebar");
 const overlay = document.getElementById("overlay");
 const toggle = document.getElementById("sidebarToggle");
@@ -738,17 +783,18 @@ toggle.onclick = function () {
     sidebar.classList.toggle("active");
     overlay.classList.toggle("show");
 };
+
 overlay.onclick = function () {
     sidebar.classList.remove("active"); 
     overlay.classList.remove("show");
 };
+
 document.querySelectorAll(".slidebar a").forEach(link => {
     link.onclick = function () {
         sidebar.classList.remove("active");
         overlay.classList.remove("show");
     };
 });
-
 </script>
 </body>
-</html> 
+</html>

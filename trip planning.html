@@ -365,12 +365,23 @@ body::before {
 }
 
 /* Modal Styling */
-.modal-header {
-    background-color: #114B5F;
-    color: white;
-}
+/* 1. X Icon အရောင်ကို ထင်ရှားအောင် ပြန်ညှိခြင်း */
 .modal-header .btn-close {
-    filter: invert(1) grayscale(1) brightness(2);
+    filter: none !important; /* မူလ Filter ကို ဖျက်မည် */
+    opacity: 0.8;
+    z-index: 1055; /* Icon အပေါ်ဆုံးရောက်စေရန် */
+}
+
+/* 2. Responsive Screen အတွက် Layout ပြန်ညှိခြင်း */
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-title {
+    word-break: break-word; /* စာသားရှည်ပါက အောက်ကြောင်းဆင်းရန် */
+    padding-right: 15px;
 }
 .info-label {
     font-weight: 600;
@@ -580,7 +591,7 @@ footer p {
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title fw-bold" id="modalTitle">Location Details</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body p-4" id="modalBody">
         <!-- Dynamic Content (Left side Info, Right side Image) Injected Here -->
@@ -614,7 +625,7 @@ const placeDetailsData = {
             type: "Wildlife Park & Attraction",
             location: "Zeyarthiri District, Naypyitaw",
             desc: "An open-concept wildlife reserve featuring Asian, Australian, and African zones. Visitors can take guided buggy tours to see rare species, lions, tigers, giraffes, and rhinos roaming in natural habitat style enclosures.",
-            img: " npt photos\\safari1.jpg",
+            img: " npt photos/safari1.jpg",
             pageUrl: "Nay Pyi Taw Safari Park.html"
         },
         my: {
@@ -622,7 +633,7 @@ const placeDetailsData = {
             type: "တောရိုင်းတိရစ္ဆာန် ဥယျာဉ်",
             location: "ဇေယျာသီရိခရိုင်၊ နေပြည်တော်",
             desc: "အာရှ၊ ဩစတြေးလျနှင့် အာဖရိက ဇုန်းများခွဲခြားကာ တောရိုင်းတိရစ္ဆာန်များကို သဘာဝအတိုင်း လွှတ်ကျောင်းမွေးမြူထားသော ဥယျာဉ်ကြီး ဖြစ်သည်။ ဘက်ဂီကားများဖြင့် လှည့်လည်ကြည့်ရှုနိုင်ပြီး ရှားပါးတိရစ္ဆာန်များ၊ ခြင်္သေ့၊ ကျား၊ သစ်ကုလားအုတ်နှင့် ကြံ့များကို လေ့လာနိုင်သည်။",
-            img: "npt photos\\safari1.jpg",
+            img: "npt photos/safari1.jpg",
             pageUrl: "Nay Pyi Taw Safari Park.html"
         }
     },
@@ -632,7 +643,7 @@ const placeDetailsData = {
             type: "Zoological Park & Attraction",
             location: "Zeyarthiri District, Naypyitaw",
             desc: "The  zoo in Myanmar with an impressive penguin house and dynamic wildlife habitats.",
-            img: "npt photos\\zoo2.jpg",
+            img: "npt photos/zoo2.jpg",
             pageUrl: "Naypyidaw Zoological Gardens.html"
         },
         my: {
@@ -640,7 +651,7 @@ const placeDetailsData = {
             type: "တိရစ္ဆာန်ဥယျာဉ်နှင့် အပန်းဖြေစခန်း",
             location: "ဇေယျာသီရိခရိုင်၊ နေပြည်တော်",
             desc: "ပင်ဂွင်းအိမ်အပါအဝင် ကမ္ဘာ့အဆင့်မီ ဆန်းပြားသော သတ္တဝါမျိုးစုံကို ပြသထားသည့် မြန်မာနိုင်ငံ၏တိရစ္ဆာန်ရုံ။",
-            img: "npt photos\\zoo2.jpg",
+            img: "npt photos/zoo2.jpg",
             pageUrl: "Naypyidaw Zoological Gardens.html"
         }
     },
@@ -650,7 +661,7 @@ const placeDetailsData = {
             type: "Famous Pagoda / Landmark",
             location: "Pobba Thiri Township, Naypyitaw",
             desc: "The iconic replica of Shwedagon Pagoda, anchoring the primary spiritual vista of Nay Pyi Taw. Inside, you can see carved jade relief panels depicting scenes from Buddha's life.",
-            img: "npt photos\\Uppasanti1.jpg",
+            img: "npt photos/Uppasanti1.jpg",
             pageUrl: "Uppsanti.html"
         },
         my: {
@@ -658,7 +669,7 @@ const placeDetailsData = {
             type: "ထင်ရှားသော စေတီတော် / အထိမ်းအမှတ်",
             location: "ပုဗ္ဗသီရိမြို့နယ်၊ နေပြည်တော်",
             desc: "ရန်ကုန်မြို့ရှိ ရွှေတိဂုံစေတီတော်ကို နမူနာယူ တည်ဆောက်ထားသော နေပြည်တော်၏ အထင်ကရ စေတီတော်ကြီး ဖြစ်ပါသည်။ စေတီတော်လိုဏ်ဂူအတွင်း ဗုဒ္ဓဝင်ကျောက်ဆစ်ရုပ်ပွားတော်များနှင့် ပန်းပုလက်ရာများကို ဖူးမြော်နိုင်သည်။",
-            img: "npt photos\\Uppasanti1.jpg",
+            img: "npt photos/Uppasanti1.jpg",
             pageUrl: "Uppsanti.html"
         }
     },
@@ -668,7 +679,7 @@ const placeDetailsData = {
             type: "Cultural Park & Attraction",
             location: "Zeyarthiri District, Naypyitaw",
             desc: "National Landmark Garden in Naypyitaw is a vast cultural park showcasing miniature replicas of Myanmar’s most famous landmarks, pagodas, and heritage sites. Visitors can explore the country’s architectural wonders in one place, enjoy landscaped gardens, and learn about Myanmar’s rich traditions.",
-            img: "npt photos\\nml1.webp",
+            img: "npt photos/nml1.webp",
             pageUrl: "National Landmark Garden.html"
         },
         my: {
@@ -676,7 +687,7 @@ const placeDetailsData = {
             type: "ယဉ်ကျေးမှုပန်းခြံနှင့် လည်ပတ်စရာနေရာ",
             location: "ဇေယျာသီရိခရိုင်၊ နေပြည်တော်",
             desc: "မြန်မာနိုင်ငံတစ်ဝန်းရှိ ထင်ရှားကျော်ကြားသော တိုင်းနှင့်ပြည်နယ်အသီးသီး၏ စေတီပုထိုးများ၊ အထင်ကရအဆောက်အအုံများနှင့် သမိုင်းဝင်နေရာများကို ပုံစံတူငယ်များ ပြုလုပ်၍ စုစည်းပြသထားသော အပန်းဖြေယဉ်ကျေးမှုပန်းခြံကြီး ဖြစ်ပါသည်။",
-            img: "npt photos\\nml1.webp",
+            img: "npt photos/nml1.webp",
             pageUrl: "National Landmark Garden.html"
         }
     },
@@ -686,7 +697,7 @@ const placeDetailsData = {
             type: "Historical & Military Museum",
             location: "Zeyarthiri District, Naypyitaw",
             desc: "A sprawling exhibition complex dedicated to the history, technology, and service branches of the Myanmar Armed Forces, featuring large-scale military hardware, aircraft, and historical artifacts.",
-            img: "npt photos\\defence1.webp",
+            img: "npt photos/defence1.webp",
             pageUrl: "defence service.html"
         },
         my: {
@@ -694,7 +705,7 @@ const placeDetailsData = {
             type: "သမိုင်းနှင့် စစ်ဘက်ဆိုင်ရာပြတိုက်",
             location: "ဇေယျာသီရိခရိုင်၊ နေပြည်တော်",
             desc: "မြန်မာ့တပ်မတော်၏ သမိုင်းဝင် မှတ်တမ်းများ၊ တပ်မတော် (ကြည်း၊ ရေ၊ လေ) တို့၏ လက်နက်ကိရိယာများ၊ စစ်လေယာဉ်များကို အဆင့်မြင့်ခမ်းနားစွာ ခင်းကျင်းပြသထားသော ပြတိုက်ကြီး ဖြစ်ပါသည်။",
-            img: "npt photos\\defence1.webp",
+            img: "npt photos/defence1.webp",
             pageUrl: "defence service.html"
         }
     },
@@ -704,7 +715,7 @@ const placeDetailsData = {
             type: "Historical & National Memorial",
             location: "Zeyarthiri Township, Naypyitaw",
             desc: "The Memorial to the Fallen Heroes is a prominent national monument built on a 38.5-acre hilltop in Zeyarthiri Township. Constructed with white alabaster marble and traditional art carvings, it honors soldiers and civilians who sacrificed for the country. The site features a central pavilion surrounded by a scenic lake and quiet grounds.",
-            img: "npt photos\\memories1.webp", // Replace with image URL if available
+            img: "npt photos/memories1.webp", // Replace with image URL if available
             pageUrl: "memorise to fallen.html"
         },
         my: {
@@ -712,7 +723,7 @@ const placeDetailsData = {
             type: "သမိုင်းဝင် နိုင်ငံတော်အထိမ်းအမှတ် ဗိမာန်",
             location: "ဇေယျာသီရိမြို့နယ်၊ နေပြည်တော်",
             desc: "ဇေယျာသီရိမြို့နယ်ရှိ တောင်ကုန်းမြင့်ပေါ်တွင် တည်ဆောက်ထားသော နိုင်ငံတော်အဆင့် အထိမ်းအမှတ်ဗိမာန် ဖြစ်ပါသည်။ နိုင်ငံတော်နှင့် လွတ်လပ်ရေးအတွက် သက်စွန့်ကြိုးပမ်းခဲ့ကြသော စစ်သည်တော်များနှင့် ပြည်သူများ၏ အမည်နာမများကို စကျင်ကျောက်ထက်တွင် ကမ္ပည်းရေးထွင်း၍ ဂုဏ်ပြုထားရှိသော ငြိမ်သက်အေးချမ်းသည့် သမိုင်းဝင်နေရာတစ်ခု ဖြစ်သည်။",
-            img: "npt photos\\memories1.webp", // Replace with image URL if available
+            img: "npt photos/memories1.webp", // Replace with image URL if available
             pageUrl: "memorise to fallen.html"
         }
     },
@@ -722,7 +733,7 @@ const placeDetailsData = {
             type: "Higher Educational Institute",
             location: "Yezin, Naypyitaw",
             desc: "The premier agricultural university in Myanmar, offering a lush green campus dedicated to advanced farming sciences, research fields, and agricultural innovation.",
-            img: "npt_photos2\\yezin1.jpg",
+            img: "npt_photos2/yezin1.jpg",
             pageUrl: "test3.html"
         },
         my: {
@@ -730,7 +741,7 @@ const placeDetailsData = {
             type: "အဆင့်မြင့်ပညာရေး တက္ကသိုလ်",
             location: "ရေဆင်း၊ နေပြည်တော်",
             desc: "မြန်မာနိုင်ငံ၏ စိုက်ပျိုးရေးကဏ္ဍတိုးတက်ရေးအတွက် အဆင့်မြင့် စိုက်ပျိုးရေးသိပ္ပံ ဘာသာရပ်များနှင့် သုတေသနလုပ်ငန်းများကို အထူးပြုသင်ကြားပေးနေသည့် စိမ်းလန်းစိုပြည်သော သမိုင်းဝင် တက္ကသိုလ် ဖြစ်ပါသည်။",
-            img: "npt_photos2\\yezin1.jpg",
+            img: "npt_photos2/yezin1.jpg",
             pageUrl: "test3.html"
         }
     },
@@ -740,7 +751,7 @@ const placeDetailsData = {
             type: "Higher Educational Institute",
             location: "Yezin, Naypyitaw",
             desc: "The leading specialized veterinary academy in Myanmar, surrounded by research model farms, livestock production facilities, and animal health centers.",
-            img: "npt_photos2\\vsu1.png",
+            img: "npt_photos2/vsu1.png",
             pageUrl: "test9.html"
         },
         my: {
@@ -748,7 +759,7 @@ const placeDetailsData = {
             type: "အဆင့်မြင့်ပညာရေး တက္ကသိုလ်",
             location: "ရေဆင်း၊ နေပြည်တော်",
             desc: "တိရစ္ဆာန်ဆေးကုသရေးနှင့် မွေးမြူရေးဆိုင်ရာ ပညာရပ်များကို အထူးပြုသင်ကြားပေးနေသော မြန်မာနိုင်ငံ၏ တစ်ခုတည်းသော အထူးပြု ဆေးတက္ကသိုလ်ကြီး ဖြစ်ပါသည်။",
-            img: "npt_photos2\\vsu1.png",
+            img: "npt_photos2/vsu1.png",
             pageUrl: "test9.html"
         }
     },
@@ -758,7 +769,7 @@ const placeDetailsData = {
             type: "Higher Educational Institute",
             location: "Yezin, Naypyitaw",
             desc: "The premier university in Myanmar offering specialized degrees in forestry management, environmental conservation, and biodiversity research.",
-            img: "npt_photos2\\ufes1.jpg",
+            img: "npt_photos2/ufes1.jpg",
             pageUrl: "test8.html"
         },
         my: {
@@ -766,7 +777,7 @@ const placeDetailsData = {
             type: "အဆင့်မြင့်ပညာရေး တက္ကသိုလ်",
             location: "ရေဆင်း၊ နေပြည်တော်",
             desc: "သစ်တောသယံဇာတ ထိန်းသိမ်းရေး၊ သဘာဝပတ်ဝန်းကျင်နှင့် ဇီဝမျိုးစုံမျိုးကွဲဆိုင်ရာ ဘာသာရပ်များကို လေ့ကျင့်သင်ကြားပေးလျက်ရှိသော တက္ကသိုလ် ဖြစ်ပါသည်။",
-            img: "npt_photos2\\ufes1.jpg",
+            img: "npt_photos2/ufes1.jpg",
             pageUrl: "test8.html"
         }
     },
@@ -792,7 +803,7 @@ const placeDetailsData = {
             type: "Public Market & Shopping Hub",
             location: "Pobba Thiri Township, Naypyitaw",
             desc: "Pobba Thiri Market is a major commercial hub serving local residents and visitors. It offers a vibrant daily shopping experience with a wide variety of fresh farm produce, regional delicacies, household goods, and traditional crafts.",
-            img: "npt_photos2\\pobbamarket1.webp",
+            img: "npt_photos2/pobbamarket1.webp",
             pageUrl: "Pobbathiri-market.html"
         },
         my: {
@@ -800,7 +811,7 @@ const placeDetailsData = {
             type: "အများပြည်သူသုံး ဈေးနှင့် ကုန်သွယ်ရေးဗဟို",
             location: "ပုဗ္ဗသီရိမြို့နယ်၊ နေပြည်တော်",
             desc: "ပုဗ္ဗသီရိဈေးကြီးသည် ပုဗ္ဗသီရိမြို့နယ်ရှိ အဓိက ကုန်သွယ်ရေးဗဟိုချက် ဖြစ်ပါသည်။ လတ်ဆတ်သော လယ်ယာထွက်ကုန် သီးနှံများ၊ ဒေသထွက် အစားအစာများ၊ အိမ်သုံးပစ္စည်းများနှင့် လက်ရာပစ္စည်းများကို စုံလင်စွာ ဝယ်ယူရရှိနိုင်ပါသည်။",
-            img: "npt_photos2\\pobbamarket1.webp",
+            img: "npt_photos2/pobbamarket1.webp",
             pageUrl: "Pobbathiri-market.html"
         }
     },
@@ -810,7 +821,7 @@ const placeDetailsData = {
             type: "Local Food & Community Market",
             location: "Ywadaw Area, Pobba Thiri Township, Naypyitaw",
             desc: "Located in the Ywadaw region of Pobba Thiri Township, Mingalar Market provides fresh daily groceries, farm produce, traditional snacks, and local household essentials to neighboring residents.",
-            img: "npt_photos2\\ywadaw1.webp",
+            img: "npt_photos2/ywadaw1.webp",
             pageUrl: "ywadaw.html"
         },
         my: {
@@ -818,7 +829,7 @@ const placeDetailsData = {
             type: "ဒေသခံဈေး",
             location: "ရွာတော်၊ ပုဗ္ဗသီရိမြို့နယ်၊ နေပြည်တော်",
             desc: "ပုဗ္ဗသီရိမြို့နယ် ရွာတော်နယ်မြေအတွင်း တည်ရှိပြီး ဒေသခံများအတွက် နေ့စဉ် လတ်ဆတ်သော အသား၊ ငါး၊ ဟင်းသီးဟင်းရွက်များ၊ ရိုးရာ မုန့်ပဲသရေစာများနှင့် နေ့စဉ် သုံးကုန်များကို လွယ်ကူစွာ ဝယ်ယူနိုင်သည့် ဈေးကြီး ဖြစ်ပါသည်။",
-            img: "npt_photos2\\ywadaw1.webp",
+            img: "npt_photos2/ywadaw1.webp",
             pageUrl: "ywadaw.html"
         }
     },
@@ -828,7 +839,7 @@ const placeDetailsData = {
             type: "Educational Institution",
             location: "Ottarathiri Township, Naypyitaw",
             desc: "Naypyitaw State Polytechnic University is a premier technical higher education institution designed to foster innovation, engineering excellence, and practical technological skills for students across Myanmar.",
-            img: "npt_photos2\\nspu.jpg",
+            img: "npt_photos2/nspu.jpg",
             pageUrl: "test5.html"
         },
         my: {
@@ -836,7 +847,7 @@ const placeDetailsData = {
             type: "အဆင့်မြင့် ပညာရေး တက္ကသိုလ်",
             location: "ဥတ္တရသီရိမြို့နယ်၊ နေပြည်တော်",
             desc: "Naypyitaw State Polytechnic University(NSPU)သည် အင်ဂျင်နီယာနှင့် နည်းပညာဘာသာရပ်များကို အထူးပြု သင်ကြားပေးပြီး တန်းဖိုးရှိသော နည်းပညာကျွမ်းကျင်သူများကို မွေးထုတ်ပေးလျက်ရှိသည့် အဆင့်မြင့် တက္ကသိုလ် ဖြစ်ပါသည်။",
-            img: "npt_photos2\\nspu.jpg",
+            img: "npt_photos2/nspu.jpg",
             pageUrl: "test5.html"
         }
     },
@@ -847,7 +858,7 @@ const placeDetailsData = {
             type: "Shopping Mall",
             location: "Ottarathiri Township, Naypyitaw",
             desc: "A major commercial shopping hub in Ottarathiri offering a comprehensive range of local and imported groceries, fashion apparel, electronics, and multiple dining options under one roof.",
-            img: "npt_photos2\\ocean1.jpg",
+            img: "npt_photos2/ocean1.jpg",
             pageUrl: "ocean supermarket.html"
         },
         my: {
@@ -855,7 +866,7 @@ const placeDetailsData = {
             type: " ဈေးဝယ်စင်တာ",
             location: "ဥတ္တရသီရိမြို့နယ်၊ နေပြည်တော်",
             desc: "ဥတ္တရသီရိမြို့နယ်၏ အဓိက ဈေးဝယ်စင်တာ ဖြစ်ပြီး နေ့စဉ်သုံး ကုန်ပစ္စည်းများ၊ အဝတ်အထည်၊ လျှပ်စစ်ပစ္စည်းများနှင့် အစားအသောက်ဆိုင်များကို စုံလင်စွာ ဝယ်ယူရရှိနိုင်သည့် အဓိက နေရာဖြစ်ပါသည်။",
-            img: "npt_photos2\\ocean1.jpg",
+            img: "npt_photos2/ocean1.jpg",
             pageUrl: "ocean supermarket.html"
         }
     },
@@ -866,7 +877,7 @@ const placeDetailsData = {
             type: "Religious & Natural Landmark",
             location: "Tatkon Township, Naypyitaw",
             desc: "Situated atop a serene hill, Hlay Khwe Taung Pagoda is a peaceful pilgrimage site offering panoramic views of the surrounding natural landscape and countryside.",
-            img: "npt photos\\hkt2.webp",
+            img: "npt photos/hkt2.webp",
             pageUrl: "Hlay Khwe Taung.html"
         },
         my: {
@@ -874,7 +885,7 @@ const placeDetailsData = {
             type: "သာသနိကနှင့် သဘာဝအပန်းဖြေနေရာ",
             location: "တပ်ကုန်းမြို့နယ်၊ နေပြည်တော်",
             desc: "တောင်ထိပ်ပေါ်တွင် တည်ထားကိုးကွယ်ထားသည့် လှေခွက်တောင် စေတီတော်သည် စိတ်အေးချမ်းဖွယ်ကောင်းသော သာသနိကနယ်မြေတစ်ခု ဖြစ်ပြီး ပတ်ဝန်းကျင် သဘာဝရှုခင်းများကို အထက်စီးမှ ကြည့်ရှုနိုင်ပါသည်။",
-            img: "npt photos\\hkt2.webp",
+            img: "npt photos/hkt2.webp",
             pageUrl: "Hlay Khwe Taung.html"
         }
     },
@@ -885,7 +896,7 @@ const placeDetailsData = {
             type: "Religious Landmark & Sacred Pagoda",
             location: "Ottarathiri Township, Naypyitaw",
             desc: "A magnificent 162-foot-tall replica of the famous Mahabodhi Temple in Bodh Gaya, India. It stands as a prominent Buddhist pilgrimage destination in Naypyitaw.",
-            img: "npt photos\\buhhagaya1.jpg",
+            img: "npt photos/buhhagaya1.jpg",
             pageUrl: "Buddhagya.html"
         },
         my: {
@@ -893,7 +904,7 @@ const placeDetailsData = {
             type: "ထင်ရှားသော သာသနိက စေတီတော်ကြီး",
             location: "ဥတ္တရသီရိမြို့နယ်၊ နေပြည်တော်",
             desc: "အိန္ဒိယနိုင်ငံ ဗုဒ္ဓဂယာရှိ မဟာဗောဓိ စေတီတော်မြတ်ကြီး၏ ပုံစံအတိုင်း ပုံတူတည်ထားပူဇော်ထားသော သာသနိက စေတီတော်ကြီး ဖြစ်ပါသည်။",
-            img: "npt photos\\buhhagaya1.jpg",
+            img: "npt photos/buhhagaya1.jpg",
             pageUrl: "Buddhagya.html"
         }
     },
@@ -923,7 +934,7 @@ const placeDetailsData = {
             type: "Religious Landmark & Sacred Marble Image",
             location: "Ottarathiri Township, Naypyitaw",
             desc: "A  standing Buddha statue carved meticulously out of solid marble, representing serene religious craftsmanship and spiritual peace in Ottarathiri.",
-            img: "npt photos\\mahar2.webp",
+            img: "npt photos/mahar2.webp",
             pageUrl: "Maha Sakkyaramsi.html"
         },
         my: {
@@ -931,7 +942,7 @@ const placeDetailsData = {
             type: "ကျောက်ဆစ် ရပ်တော်မူ ရုပ်ပွားတော်မြတ်ကြီး",
             location: "ဥတ္တရသီရိမြို့နယ်၊ နေပြည်တော်",
             desc: " သပ္ပါယ်လှသော စလင်းကျောက်ဆစ် မဟာသကျရံသီ ရပ်တော်မူ ရုပ်ပွားတော်မြတ်ကြီး ဖြစ်ပါသည်။",
-            img: "npt photos\\mahar2.webp",
+            img: "npt photos/mahar2.webp",
             pageUrl: "Maha Sakkyaramsi.html"
         }
     },
@@ -941,7 +952,7 @@ const placeDetailsData = {
             type: "Higher Educational Institute",
             location: "Pyinmana District, Naypyitaw",
             desc: "Naypyitaw State Academy is a premier higher education university in Naypyitaw designed to offer diverse undergraduate and postgraduate degree programs in arts, science, law, economics, and technology.",
-            img: "npt_photos2\\nsa1.jpg",
+            img: "npt_photos2/nsa1.jpg",
             pageUrl: "test4.html"
         },
         my: {
@@ -949,7 +960,7 @@ const placeDetailsData = {
             type: "အဆင့်မြင့် ပညာရေး တက္ကသိုလ်",
             location: "ပျဉ်းမနားခရိုင်၊ နေပြည်တော်",
             desc: "ဝိဇ္ဇာ၊ သိပ္ပံ၊ ဥပဒေ၊ စီးပွားရေးနှင့် နည်းပညာ အပါအဝင် ဘာသာရပ်ပေါင်းစုံကို အဆင့်မြင့်စွာ သင်ကြားပေးနေသော နေပြည်တော်၏ ထိပ်တန်း တက္ကသိုလ်ကြီး ဖြစ်ပါသည်။",
-            img: "npt_photos2\\nsa1.jpg",
+            img: "npt_photos2/nsa1.jpg",
             pageUrl: "test4.html"
         }
     },
@@ -960,7 +971,7 @@ const placeDetailsData = {
             type: "Sports & Recreation Park",
             location: "Pyinmana Township, Naypyitaw",
             desc: "PNPT Sport Farm is a scenic outdoor leisure destination featuring sports facilities, playgrounds, green gardens, and photo spots suitable for family weekend outings.",
-            img: "npt photos\\pnpt1.webp",
+            img: "npt photos/pnpt1.webp",
             pageUrl: "PNPT.html"
         },
         my: {
@@ -968,7 +979,7 @@ const placeDetailsData = {
             type: " အပန်းဖြေစခန်း",
             location: "ပျဉ်းမနားမြို့နယ်၊ နေပြည်တော်",
             desc: "ကလေးများအတွက် ကစားကွင်းများ၊  သဘာဝဓာတ်ပုံရိုက်ကွင်းများ ပါဝင်သည့် မိသားစုအပန်းဖြေစခန်း ဖြစ်ပါသည်။",
-            img: "npt photos\\pnpt1.webp",
+            img: "npt photos/pnpt1.webp",
             pageUrl: "PNPT.html"
         }
     },
@@ -978,7 +989,7 @@ const placeDetailsData = {
             type:"Public Market & Shopping Hub",
             location:"Zabuthiri Township",
             desc:"A famous central shopping precinct known for electronics, clothing, local produce, and lively food stalls.",
-            img:"npt_photos2\\thapa1.webp",
+            img:"npt_photos2/thapa1.webp",
             pageUrl:"thapyaygone.html"
         },
         my:{
@@ -986,7 +997,7 @@ const placeDetailsData = {
             type:"အများပြည်သူသုံး ဈေးနှင့် ကုန်သွယ်ရေးဗဟို",
             location:"ဇမ္ဗူသီရိမြို့နယ်",
             desc:"အဝတ်အထည်၊ လျှပ်စစ်ပစ္စည်းများနှင့် အစားအသောက်မျိုးစုံ ရရှိနိုင်သော စည်ကားလှသည့် ဈေးကြီး။",
-            img:"npt_photos2\\thapa1.webp",
+            img:"npt_photos2/thapa1.webp",
             pageUrl:"thapyaygone.html"
         }
     },
@@ -996,7 +1007,7 @@ const placeDetailsData = {
             type:"Shopping Mall",
             location:"Zabuthiri Township",
             desc:"A convenient modern retail shopping complex offering groceries, branded goods, and family dining options.",
-            img:"npt_photos2\\junction1.webp",
+            img:"npt_photos2/junction1.webp",
             pageUrl:"junction.html"
         },
         my:{
@@ -1004,7 +1015,7 @@ const placeDetailsData = {
             type:"ဈေးဝယ်စင်တာ",
             location:"ဇမ္ဗူသီရိမြို့နယ်",
             desc:"ခေတ်မီဆန်းသစ်သော ဈေးဝယ်စင်တာဖြစ်ပြီး လူသုံးကုန်ပစ္စည်းများနှင့် စားသောက်ဆိုင်များ ပါဝင်သည်။",
-            img:"npt_photos2\\junction1.webp",
+            img:"npt_photos2/junction1.webp",
             pageUrl:"junction.html"
         }
     },
@@ -1014,7 +1025,7 @@ const placeDetailsData = {
             type:"Public Market & Shopping Hub",
             location:"Zabuthiri Township",
             desc:"The main traditional wholesale and retail marketplace reflecting the vibrant local trade of Pyinmana.",
-            img:"npt_photos2\\myoma1.webp",
+            img:"npt_photos2/myoma1.webp",
             pageUrl:"myoma.html"
         },
         my:{
@@ -1022,7 +1033,7 @@ const placeDetailsData = {
             type:"အများပြည်သူသုံး ဈေးနှင့် ကုန်သွယ်ရေးဗဟို",
             location:"ဇမ္ဗူသီရိမြို့နယ်",
             desc:"ဒေသတွင်း ထုတ်ကုန်များနှင့် ကုန်စည်မျိုးစုံ အဓိက အရောင်းအဝယ်ပြုလုပ်ရာ မြို့မဈေးကြီး။",
-            img:"npt_photos2\\myoma1.webp",
+            img:"npt_photos2/myoma1.webp",
             pageUrl:"myoma.html"
         }
     },
@@ -1032,7 +1043,7 @@ const placeDetailsData = {
             type:"Public Market & Shopping Hub",
             location:"Zabuthiri Township",
             desc:"The main traditional wholesale and retail marketplace reflecting the vibrant local trade of Pyinmana.",
-            img:"npt_photos2\\ahara6.webp",
+            img:"npt_photos2/ahara6.webp",
             pageUrl:"Ahara.html"
         },
         my:{
@@ -1040,7 +1051,7 @@ const placeDetailsData = {
             type:"အများပြည်သူသုံး ဈေးနှင့် ကုန်သွယ်ရေးဗဟို",
             location:"ဇမ္ဗူသီရိမြို့နယ်",
             desc:"ဒေသတွင်း ထုတ်ကုန်များနှင့် ကုန်စည်မျိုးစုံ အဓိက အရောင်းအဝယ်ပြုလုပ်ရာ အဟာရသုခဈေးကြီး။",
-            img:"npt_photos2\\ahara6.webp",
+            img:"npt_photos2/ahara6.webp",
             pageUrl:"Ahara.html"
         }
     },
@@ -1050,7 +1061,7 @@ const placeDetailsData = {
             type:"Recreation Park",
             location:"Zabuthiri Township",
             desc:"A sprawling recreational park featuring musical water fountains, illuminated bridges, and scenic walkways.",
-            img:"npt photos\\waterfountain2.jpg",
+            img:"npt photos/waterfountain2.jpg",
             pageUrl:"waterfountain.html"
         },
         my:{
@@ -1058,7 +1069,7 @@ const placeDetailsData = {
             type:"အပန်းဖြေစခန်း",
             location:"ဇမ္ဗူသီရိမြို့နယ်",
             desc:"ဂီတရေပန်းများ၊ ညဘက် မီးရောင်စုံရှုခင်းများနှင့် သာယာလှပသော သဘာဝအပန်းဖြေ ပန်းခြံကြီး။",
-            img:"npt photos\\waterfountain2.jpg",
+            img:"npt photos/waterfountain2.jpg",
             pageUrl:"waterfountain.html"
         }
     },
@@ -1068,7 +1079,7 @@ const placeDetailsData = {
             type:"Recreation Park",
             location:"Zabuthiri Township",
             desc:"A premier international multi-purpose sports complex capable of hosting major national games and events.",
-            img:"npt photos\\stadium1.webp",
+            img:"npt photos/stadium1.webp",
             pageUrl:"Wunna Theikdi Stadium.html"
         },
         my:{
@@ -1076,7 +1087,7 @@ const placeDetailsData = {
             type:"အပန်းဖြေစခန်း",
             location:"ဇမ္ဗူသီရိမြို့နယ်",
             desc:"နိုင်ငံတကာအဆင့်မီ အားကစားပြိုင်ပွဲများနှင့် ပွဲလမ်းသဘင်များ ကျင်းပရာ အားကစားကွင်းကြီး။",
-            img:"npt photos\\stadium1.webp",
+            img:"npt photos/stadium1.webp",
             pageUrl:"Wunna Theikdi Stadium.html"
         }
     },
@@ -1086,7 +1097,7 @@ const placeDetailsData = {
             type:"Famous Pagoda",
             location:"Dekkhinathiri Township",
             desc:"The world's tallest sitting marble Buddha statue, a monumental engineering feat.",
-            img:"npt photos\\maravijaya3.jpeg",
+            img:"npt photos/maravijaya3.jpeg",
             pageUrl:"Maravijaya.html"
         },
         my:{
@@ -1094,7 +1105,7 @@ const placeDetailsData = {
             type:"ထင်ရှားသောဘုရားစေတီ",
             location:"ဒက္ခိဏသီရိမြို့နယ်",
             desc:"ကမ္ဘာ့အမြင့်ဆုံး ထိုင်တော်မူ စကျင်ကျောက်ဆစ် ဗုဒ္ဓရုပ်ပွားတော်ကြီး။",
-            img:"npt photos\\maravijaya3.jpeg",
+            img:"npt photos/maravijaya3.jpeg",
             pageUrl:"Maravijaya.html"
         }
     }
